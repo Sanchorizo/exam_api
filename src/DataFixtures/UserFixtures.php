@@ -38,6 +38,14 @@ class UserFixtures extends Fixture
         $admin->setRoles(["ROLE_ADMIN"]);
         $manager->persist($admin);
 
+        $usertest = new User();
+        $usertest->setPassword($this->hasher->hashPassword($usertest,'user'));
+        $usertest->setUsername("user");
+        $usertest->setPrenom("Maxime");
+        $usertest->setNom("Martinez");
+        $usertest->setRoles(["ROLE_USER"]);
+        $manager->persist($usertest);
+
 
         $manager->flush();
     }
