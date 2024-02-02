@@ -23,7 +23,7 @@ class UserFixtures extends Fixture
 
         for ($i =0; $i< 101;$i++){
             $user = new User();
-            $user->setNom($faker->name);
+            $user->setNom($faker->lastName);
             $user->setPrenom($faker->firstName);
             $user->setUsername($faker->userName);
             $user->setPassword($faker->password());
@@ -43,7 +43,6 @@ class UserFixtures extends Fixture
         $usertest->setUsername("user");
         $usertest->setPrenom("Maxime");
         $usertest->setNom("Martinez");
-        $usertest->setRoles(["ROLE_USER"]);
         $manager->persist($usertest);
 
 
